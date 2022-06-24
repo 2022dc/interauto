@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h4{
+            color:green;
+        }
+        table{
+            border: 1px solid;
+            border-collapse: collapse;
+
+        }
+        td{
+            border:1px solid #000;
+            padding:5px 10px;
+            text-align: center;
+        }
+        .success{
+            color: green;
+        }
+        .error{
+            color:red;
+            font-weight: bold;
+        }
+        .title{
+            background: green;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h4>[项目${PROJECT_NAME}]用例执行汇总信息如下：</h4>
+    <table>
+        <tbody>
+            <tr>
+                <td class="title">测试人员</td>
+                <td>gu</td>
+            </tr>
+             <tr>
+                <td class="title">构建编号</td>
+                <td>${BUILD_NUMBER}</td>
+
+            </tr>
+        <tr>
+                <td class="title">构建结果</td>
+                <td>${BUILD_STATUS}</td>
+
+            </tr>
+        <tr>
+                <td class="title">构建地址</td>
+                <td>${BUILD_URL}</td>
+
+            </tr>
+            <tr>
+                    <td class="title">用例总数</td>
+                    <td class="success">${TEST_COUNTS,var="total"}</td>
+                </tr>
+            <tr>
+                <td class="title">成功用例</td>
+                <td class="success">${TEST_COUNTS,var="pass"}</td>
+                </tr>
+            <tr>
+                <td class="title">失败用例</td>
+                <td class="error">${TEST_COUNTS,var="fail"}</td>
+                </tr>
+            <tr>
+                <td class="title">跳过用例</td>
+                <td>${TEST_COUNTS,var="skip"}</td>
+                </tr>
+         <tr>
+                <td class="title">allure测试报告查看地址</td>
+                <td>${PROJECT_URL}/allure</td>
+         </tr>
+        </tbody>
+    </table>
+</body>
+</html>
